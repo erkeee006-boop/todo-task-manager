@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менің тапсырмаларым | TaskFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">TaskFlow</a>
+        <nav>
+            <a href="index.html">Басты бет</a>
+            <a href="login.html">Кіру / Тіркелу</a>
+            <a href="tasks.html">Менің тапсырмаларым</a>
+        </nav>
+    </header>
+
+    <main class="tasks-container">
+        <section class="tasks-heading">
+            <div>
+                <span class="eyebrow">ЖОСПАРЛАУ ОРТАЛЫҒЫ</span>
+                <h1>Менің тапсырмаларым</h1>
+                <p>Кішкентай қадамдар үлкен нәтижеге жеткізеді.</p>
+            </div>
+            <div class="date-card">
+                <span>БҮГІН</span>
+                <strong id="todayDate">--</strong>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span class="stat-icon">✦</span>
+                <p>Барлық тапсырма</p>
+                <strong id="totalCount">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon">✓</span>
+                <p>Орындалған</p>
+                <strong id="completedCount">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon">◷</span>
+                <p>Күтіп тұрған</p>
+                <strong id="pendingCount">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon">?</span>
+                <p>Резерв</p>
+                <strong id="pendingCount">0</strong>
+            </article>
+        </section>
+
+        <section class="task-panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Күндік жоспар</h2>
+                    <p>Бүгін орындауың керек істер</p>
+                </div>
+            </div>
+
+            <form id="taskForm" class="task-form">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Мысалы: тапсырманы аяқтау..."
+                    maxlength="120"
+                    required
+                >
+                <button type="submit" class="button">+ Қосу</button>
+            </form>
+
+            <div class="task-tools">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Тапсырманы іздеу..."
+                    aria-label="Тапсырманы іздеу"
+                >
+
+                <select id="filterSelect" aria-label="Тапсырмаларды сүзу">
+                    <option value="all">Барлығы</option>
+                    <option value="pending">Орындалмаған</option>
+                    <option value="completed">Орындалған</option>
+                    <option value="completed">Резерв</option>
+                </select>
+            </div>
+
+            <ul id="taskList" class="task-list"></ul>
+
+            <div id="emptyState" class="empty-state">
+                <span>🌿</span>
+                <h3>Әзірге тапсырма жоқ</h3>
+                <p>Алғашқы тапсырмаңды қосып, күніңді жоспарла.</p>
+            </div>
+
+            <div class="task-footer">
+                <span id="taskSummary">0 тапсырма</span>
+                <button type="button" id="clearCompleted" class="text-button">
+                    Орындалғандарды тазалау
+                </button>
+            </div>
+        </section>
+
+        <p class="storage-note">
+            Ескерту: бұл оқу жобасының бастапқы нұсқасы. Тапсырмалар осы браузерде сақталады.
+            Сервер мен MySQL базасы кейін қосылады.
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 TaskFlow. Күн сайын бір қадам алға.</p>
+    </footer>
+</body>
+</html>
